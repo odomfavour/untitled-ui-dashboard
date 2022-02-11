@@ -16,7 +16,8 @@ export default {
       href: "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&family=Manrope:wght@200;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,400;0,600;1,200;1,400;1,500;1,700&family=Spicy+Rice&display=swap"
     }],
   },
-
+  target: 'static',
+  ssr: false,
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
