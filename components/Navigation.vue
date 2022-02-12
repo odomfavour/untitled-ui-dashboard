@@ -1,6 +1,6 @@
 <template>
   <section>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="#"
           ><img src="/Logo.png" alt="logo" class="img-fluid"
@@ -66,7 +66,59 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
+    <b-navbar toggleable="lg">
+      <div class="container">
+        <b-navbar-brand href="#">
+          <img src="/Logo.png" alt="logo" class="img-fluid"/>
+        </b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse">
+      <img src="/navbar.png" alt="logo" class="img-fluid"/>
+    </b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item href="#">Home</b-nav-item>
+        <b-nav-item href="#">Dashboard</b-nav-item>
+        <b-nav-item href="#">Projects</b-nav-item>
+        <b-nav-item href="#">Tasks</b-nav-item>
+        <b-nav-item href="#">Reporting</b-nav-item>
+        <b-nav-item href="#">Users</b-nav-item>
+      </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        
+        <div class="right-section">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn grey-outline-btn">
+                  <img src="/zap.png" alt="" class="img-fluid" />
+                  <span>Upgrade Now</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <div class="d-flex">
+                  <img
+                    src="/gear.png"
+                    alt=""
+                    class="img-fluid mr-1"
+                    role="button"
+                  />
+                  <img src="/bell.png" alt="" class="img-fluid" role="button" />
+                </div>
+              </li>
+              <li class="nav-item">
+                <img src="/avatar.png" alt="" class="img-fluid" role="button" />
+              </li>
+            </ul>
+          </div>
+        
+      </b-navbar-nav>
+    </b-collapse>
+      </div>
+  </b-navbar>
     <div class="lower-nav py-3 d-none d-md-block">
         <div class="container">
             <div class="d-flex justify-content-between">
@@ -100,7 +152,7 @@
               </span>
             </div>
             <input
-              type="text"
+              type="search"
               class="form-control"
               placeholder="Search"
               aria-label="Search"
@@ -112,6 +164,8 @@
         </div>
       
     </div>
+    <div>
+</div>
   </section>
 </template>
 
@@ -120,6 +174,10 @@ export default {}
 </script>
 
 <style>
+
+.navbar {
+  background: #fff !important;
+}
 .right-section li {
   margin-left: 20px;
 }
@@ -137,9 +195,45 @@ export default {}
     width: 33%;
 }
 
+.search .input-group-text {
+  background: #fff;
+  border-right: 0;
+}
+
+.search input[type= 'search'] {
+  border-left: 0;
+
+}
+
+.search input[type= 'search']:focus {
+  outline: none;
+  box-shadow: none;
+  /* border-color: #344054; */
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color:  #344054;
+}
+
+
+
 @media (max-width: 427px) {
     .search {
     width: 100%;
+}
+
+.right-section li {
+  margin-left: 0px;
+  margin-bottom: 10px;
 }
 }
 </style>

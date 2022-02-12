@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="d-flex justify-content-between flex-md-row flex-column mt-4">
+    <div class="d-flex justify-content-between flex-md-row flex-column mt-4 intro">
       <div>
         <h1>Welcome back, Olivia</h1>
         <p>Track, manage and forecast your customers and orders.</p>
@@ -29,7 +29,7 @@
             </div>
             <div class="mt-3">
               <div class="row">
-                <div class="col-md-7 col-8">
+                <div class="col-md-7 col-7">
                   <h2>{{ item.count }}</h2>
                   <div class="mt-3">
                     <b-icon :icon="item.icon" :variant="item.variant"></b-icon>
@@ -37,7 +37,7 @@
                     last month
                   </div>
                 </div>
-                <div class="col-md-5 col-4">
+                <div class="col-md-5 col-5">
                   <img
                     :src="`/${item.img}.png `"
                     alt=""
@@ -51,26 +51,41 @@
       </div>
     </div>
     <div class="mt-3">
-        <div class="d-flex justify-content-between align-items-center flex-md-row flex-column">
-            <div class="left-section order-md-1 order-2">
-                <div class="d-flex flex-md-row flex-column">
-                     <div class="order-2 order-md-1">
-                    <button class="btn purple-outline-btn mr-2 mb-3 ">All time X</button>
-                <button class="btn purple-outline-btn mr-2 mb-3">US, AU +4 X</button>
-                </div>
-                
-                <button class="btn grey-outline-btn mb-3 filter-btn order-1 order-md-2"><b-icon icon="filter"></b-icon> More Filters</button>
-                </div>
+      <div
+        class="
+          d-flex
+          justify-content-between
+          align-items-center
+          flex-md-row flex-column
+        "
+      >
+        <div class="left-section order-md-1 order-2">
+          <div class="d-flex flex-md-row flex-column">
+            <div class="order-2 order-md-1">
+              <button class="btn purple-outline-btn mr-2 mb-3">
+                All time X
+              </button>
+              <button class="btn purple-outline-btn mr-2 mb-3">
+                US, AU +4 X
+              </button>
             </div>
-            <div class="search order-md-2 order-1">
+
+            <button
+              class="btn grey-outline-btn mb-3 filter-btn order-1 order-md-2"
+            >
+              <b-icon icon="filter"></b-icon> More Filters
+            </button>
+          </div>
+        </div>
+        <div class="search order-md-2 order-1">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">
-                  <b-icon icon="search"></b-icon>
+                <b-icon icon="search"></b-icon>
               </span>
             </div>
             <input
-              type="text"
+              type="search"
               class="form-control"
               placeholder="Search"
               aria-label="Search"
@@ -78,7 +93,7 @@
             />
           </div>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -124,44 +139,66 @@ export default {
 <style>
 .primary-btn {
   color: #fff;
-  background: #7F56D9;
-border: 1px solid #7F56D9;
-box-sizing: border-box;
-font-weight: 500;
-font-size: 14px;
-box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-border-radius: 8px;
+  background: #7f56d9;
+  border: 1px solid #7f56d9;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
 }
 
 .purple-outline-btn {
-    background: #F9F5FF;
-border: 1px solid #F9F5FF;
+  background: #f9f5ff;
+  border: 1px solid #f9f5ff;
 
-box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-border-radius: 8px;
-color: #6941C6;
-font-weight: 500;
-font-size: 14px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  color: #6941c6;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .grey-outline-btn {
-    background: #FFFFFF;
+  background: #ffffff;
 
-border: 1px solid #D0D5DD;
-box-sizing: border-box;
-box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-border-radius: 8px;
-color: #344054;
-font-size: 14px;
+  border: 1px solid #d0d5dd;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  color: #344054;
+  font-size: 14px;
+}
+
+.intro h1 {
+  font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+color: #101828;
+}
+
+.intro p {
+  font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+
+/* Gray/500 */
+
+color: #667085;
 }
 
 @media (max-width: 427px) {
-    .filter-btn {
-        width: 100%;
-    }
+  .filter-btn {
+    width: 100%;
+  }
 
-    .left-section {
-        width: 100%;
-    }
+  .left-section {
+    width: 100%;
+  }
 }
 </style>

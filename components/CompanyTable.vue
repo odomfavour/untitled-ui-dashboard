@@ -20,7 +20,7 @@
         <b-tr v-for="(company, index) in companyData" :key="index">
           <b-td colspan="4">
             <div class="d-flex align-items-center">
-              <img src="/Checkbox.png" alt="" class="img-fluid mr-1" />
+              <img :src="`/${company.check}.png`" alt="" class="img-fluid mr-1" />
               <img :src="`/${company.logo}.png`" alt="" class="img-fluid" />
               <div class="ml-2">
                 <p class="mb-0" style="color: #101828; font-size: 14px">
@@ -74,7 +74,8 @@
       <b-tfoot>
         <b-tr>
           <b-td colspan="12">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-none d-md-block">
+               <div class="d-flex align-items-center justify-content-between">
               <div>
                 <button class="btn grey-outline-btn">Previous</button>
                 <button class="btn grey-outline-btn">Next</button>
@@ -83,10 +84,18 @@
                 <p class="mb-0">Page 1 of 10</p>
               </div>
             </div>
+            </div>
           </b-td>
         </b-tr>
       </b-tfoot>
     </b-table-simple>
+    <div class="mt-3 d-md-none d-block">
+      <div class="d-flex justify-content-between align-items-center py-3">
+        <b-icon icon="arrow-left"></b-icon>
+        <p class="mb-0">Page 1 of 10</p>
+        <b-icon icon="arrow-right"></b-icon>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -103,6 +112,7 @@ export default {
           status: 'Customer',
           aboutOne: 'Content curating app',
           aboutTwo: 'Brings all your news into one Place',
+          check: 'Checkbox'
         },
         {
           logo: 'circooles',
@@ -112,6 +122,7 @@ export default {
           status: 'Churned',
           aboutOne: 'Design software',
           aboutTwo: 'Super lightweight design app',
+          check: 'Checkbox'
         },
         {
           logo: 'commandr',
@@ -121,6 +132,7 @@ export default {
           status: 'Customer',
           aboutOne: 'Data prediction',
           aboutTwo: 'AI and machine learning data',
+          check: 'Checkbox'
         },
         {
           logo: 'hourglass',
@@ -130,6 +142,7 @@ export default {
           status: 'Customer',
           aboutOne: 'Productivity',
           aboutTwo: 'Time management and productivity',
+          check: 'unchecked'
         },
         {
           logo: 'layers',
@@ -139,6 +152,7 @@ export default {
           status: 'Churned',
           aboutOne: 'Web app integrations',
           aboutTwo: 'Connect web apps seamlessly',
+          check: 'unchecked'
         },
         {
           logo: 'quotient',
@@ -148,6 +162,7 @@ export default {
           status: 'Customer',
           aboutOne: 'Sales CRM',
           aboutTwo: 'Web-based sales doc management',
+          check: 'Checkbox'
         },
         {
           logo: 'sisyphus',
@@ -157,6 +172,7 @@ export default {
           status: 'Customer',
           aboutOne: 'Automation and workflow',
           aboutTwo: 'Time tracking, invoicing and expenses',
+          check: 'Checkbox'
         },
       ],
     }
