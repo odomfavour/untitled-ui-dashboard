@@ -188,11 +188,21 @@ export default {}
 }
 
 .lower-nav .nav-pills .nav-link {
-    color: #344054
+    font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+padding: 8px 12px !important;
+
+/* Gray/700 */
+
+color: #344054;
 }
 
 .search {
-    width: 33%;
+    width: 31%;
 }
 
 .search .input-group-text {

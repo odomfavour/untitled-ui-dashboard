@@ -6,7 +6,7 @@
         <p>Track, manage and forecast your customers and orders.</p>
       </div>
       <div>
-        <button class="btn grey-outline-btn">
+        <button class="btn grey-outline-btn mr-2">
           <img src="/upload-cloud.png" alt="" class="img-fluid" />
           Import
         </button>
@@ -22,18 +22,18 @@
           v-for="(item, index) in dashboardInfo"
           :key="index"
         >
-          <b-card>
+          <b-card class="dash-card">
             <div class="d-flex justify-content-between align-content-center">
-              <p class="mb-0">Total Customers</p>
-              <b-icon icon="three-dots-vertical" class="mt-1"></b-icon>
+              <p class="mb-0 name">{{item.name}}</p>
+              <b-icon icon="three-dots-vertical" class="mt-1" role="button"></b-icon>
             </div>
             <div class="mt-3">
               <div class="row">
                 <div class="col-md-7 col-7">
-                  <h2>{{ item.count }}</h2>
-                  <div class="mt-3">
+                  <h2 class="count">{{ item.count }}</h2>
+                  <div class="mt-3 percent">
                     <b-icon :icon="item.icon" :variant="item.variant"></b-icon>
-                    <span class="text-success">{{ item.percent }}%</span> vs
+                    <span :class="item.textColor">{{ item.percent }}%</span> vs
                     last month
                   </div>
                 </div>
@@ -192,6 +192,49 @@ line-height: 24px;
 color: #667085;
 }
 
+.dash-card .name{
+  font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+
+/* Gray/900 */
+
+color: #101828;
+}
+
+.dash-card .count {
+  font-family: Inter;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height, or 122% */
+
+letter-spacing: -0.02em;
+
+/* Gray/900 */
+
+color: #101828;
+
+}
+
+.dash-card .percent {
+  font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+
+/* Gray/500 */
+
+color: #667085;
+}
 @media (max-width: 427px) {
   .filter-btn {
     width: 100%;
