@@ -12,6 +12,7 @@
           <b-th>Status</b-th>
           <b-th>Users</b-th>
           <b-th></b-th>
+          <b-th></b-th>
           <b-th>About</b-th>
           <b-th></b-th>
         </b-tr>
@@ -67,8 +68,14 @@
               <img src="/user1.png" alt="" class="img-fluid user" />
               <img src="/user1.png" alt="" class="img-fluid user" />
               <img src="/user1.png" alt="" class="img-fluid user" />
+              <div class="rem-num">
+                <div class="d-flex align-items-center justify-content-center number-box">
+                  <p class="mb-0">+5</p>
+                </div>
+              </div>
             </div>
           </b-td>
+          <b-td></b-td>
           <b-td>
             <p class="mb-0 company-about-one">
               {{ company.aboutOne }}
@@ -77,6 +84,7 @@
               {{ company.aboutTwo }}
             </p>
           </b-td>
+          <b-td></b-td>
           <b-td>
             <b-icon icon="trash" class="mr-3" role="button"></b-icon>
             <b-icon icon="pencil" role="button"></b-icon>
@@ -85,7 +93,7 @@
       </b-tbody>
       <b-tfoot>
         <b-tr>
-          <b-td colspan="12">
+          <b-td colspan="14">
             <div class="d-none d-md-block">
               <div class="d-flex align-items-center justify-content-between">
                 <div>
@@ -197,6 +205,10 @@ export default {
   height: 0.5rem;
 }
 
+.progress-bar {
+  background: #7F56D9 !important;
+}
+
 .users-box {
   position: relative;
 }
@@ -221,6 +233,12 @@ export default {
 }
 .users-box .user:nth-child(4) {
   left: 68px;
+  top: 20px;
+}
+
+.rem-num {
+  position: absolute;
+  left: 88px;
   top: 20px;
 }
 
@@ -282,6 +300,23 @@ export default {
 
   color: #344054;
 }
+
+.number-box {
+  height: 24px;
+  width: 24px;
+  border: 2px solid #fff;
+  color: #7F56D9;
+  border-radius: 50%;
+  background: #F9F5FF;
+}
+
+.number-box p {
+  font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+}
+
 @media (min-width: 760px) {
   .table-box {
     background: #ffffff;
@@ -296,7 +331,7 @@ export default {
 }
 
 @media (max-width: 427px) {
-  .users-box .user {
+  .users-box .user, .users-box .rem-num {
     top: 50px !important;
   }
 }
